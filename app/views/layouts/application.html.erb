@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= csrf_meta_tags %>
+  <title>Pragprog Books Online Store</title>
+<!-- START:stylesheet -->
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "depot", :media => "all" %><!-- <label id="code.slt"/> -->
+<!-- END:stylesheet -->
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %><!-- <label id="code.csrf"/> -->
 </head>
-<body>
-	<div id="main">
-		<%= yield %>
-	</div>
-
+<body id="store">
+  <div id="banner">
+    <%= "Web Programmieren 2 - David Elsener" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+  <div id="columns">
+    <div id="side">
+      <a href="/products">Products</a><br />
+      <a href="/products/new">New Product</a><br />
+      <a href="/store/index">Store</a><br />
+      <a href="/carts">Cart</a><br />
+    </div>
+    <div id="main">
+      <%= yield %><!-- <label id="code.depot.e.include"/> -->
+    </div>
+  </div>
 </body>
 </html>
